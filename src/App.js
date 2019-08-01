@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 
 class App extends Component {
+
+  submitlogin(e) {
+
+  }
+
   render() {
     return (
       <div className="Login">
@@ -14,7 +19,9 @@ class App extends Component {
             <td><input type="password" name="password" /></td>
           </tr>
           <tr align='center'>
-            <td colSpan="2"><input type="Submit" name="submit" /></td>
+            <td colSpan="2">
+              <button type="button" onClick={this.submitlogin.bind(this)}>Login</button>
+            </td>
           </tr>
         </table>
       </div>
