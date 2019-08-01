@@ -21,7 +21,9 @@ class App extends Component {
     const { username, password } = this.state
     const data = { username: username, password: password }
 
-    Axios.post('http://localhost:8080/api/v1/login', data)
+    const url = "http://192.168.0.158:8080/api/v1/login";
+
+    Axios.post(url, data)
     .then(res => {
       const result = res.data
 
