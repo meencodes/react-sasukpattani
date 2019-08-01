@@ -1,26 +1,26 @@
-import React, { Component }from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="Login">
+        <table>
+          <tr>
+            <td>username</td>
+            <td><input type="text" name="username" /></td>
+          </tr>
+          <tr>
+            <td>password</td>
+            <td><input type="password" name="password" /></td>
+          </tr>
+          <tr align='center'>
+            <td colSpan="2"><input type="Submit" name="submit" /></td>
+          </tr>
+        </table>
+      </div>
+    )
+  }
 }
 
 export default App;
