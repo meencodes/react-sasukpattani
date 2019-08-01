@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Axios from 'axios';
+import axios from 'axios';
 
 class App extends Component {
 
@@ -17,21 +17,24 @@ class App extends Component {
 
   submitlogin(e) {
 
-    console.log('good')
     const { username, password } = this.state
     const data = { username: username, password: password }
 
     const url = "http://192.168.0.158:8080/api/v1/login";
 
-    Axios.post(url, data)
+    axios.post(url, data)
     .then(res => {
+      console.log(res.data)
       const result = res.data
 
       if (result.result === "success") {
-        // localStorage.setItem("token", result.data)
-        console.log('success')
+        localStorage.setItem("token", result.data)
+        console.log(result.data)
+        
+      } else {
+        console.log('Login Failed')
       }
-    })
+    }) 
     .catch(error => {
       console.log(error)
     })
@@ -39,7 +42,7 @@ class App extends Component {
 
   change(e) {
     this.setState({[e.target.name]: e.target.value});
-    console.log(this.state);
+    // console.log(this.state);
   } 
 
   render() {
