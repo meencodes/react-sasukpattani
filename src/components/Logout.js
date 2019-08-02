@@ -9,8 +9,10 @@ class Logout extends Component {
     }
 
     render() {
+
         return (
             <div>
+                <h1>5555555555</h1>
                 <Link to="/">Login Again</Link>
             </div>
         )

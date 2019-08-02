@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect, withRouter } from 'react-router-dom';
 
 class Admin extends Component {
     constructor(props) {
@@ -37,4 +37,4 @@ class Admin extends Component {
     }
 }
 
-export default Admin;
+export default withRouter(Admin);

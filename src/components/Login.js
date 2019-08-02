@@ -15,6 +15,7 @@ class App extends Component {
         this.state = {
             username: '',
             password: '',
+            status: '',
             loggedIn
         }
 
@@ -37,8 +38,11 @@ class App extends Component {
 
                 if (result.result === "success") {
                     localStorage.setItem("token", result.data)
-                    //   console.log(result.data)
+
+                    console.log(result._status)
+
                     this.setState({
+                        status: result._status,
                         loggedIn: true
                     })
 
@@ -60,7 +64,15 @@ class App extends Component {
 
     render() {
         if (this.state.loggedIn) {
-            return <Redirect to="/admin" />
+            if (this.state.status === 'admin') {
+                return <Redirect to="/admin" />
+            }
+            else if (this.state.status === 'gerneral') {
+                return <Redirect to="/logout" />
+            }
+            else if (this.state.status === 'suspend') {
+                return <Redirect to="/suspend" />
+            }
         }
 
         return (
