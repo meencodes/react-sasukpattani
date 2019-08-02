@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
+import bg from '../image/background.jpg';
+import styled from 'styled-components';
 
 class App extends Component {
     constructor(props) {
@@ -24,7 +26,7 @@ class App extends Component {
 
     }
 
-    submitLogin(e) {
+    onSubmit = (e) => {
         e.preventDefault()
         const { username, password } = this.state
         const data = { username: username, password: password }
@@ -55,7 +57,7 @@ class App extends Component {
             })
     }
 
-    onChange(e) {
+    onChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         });
@@ -78,17 +80,59 @@ class App extends Component {
 
         return (
             <div className="Login">
-                <h1>Login</h1>
+                {/* <h1>Login</h1>
                 <form>
                     <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.onChange.bind(this)} />
                     <br />
                     <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.onChange.bind(this)} />
                     <br />
-                    <button type="button" onClick={this.submitLogin.bind(this)}>Login</button>
-                </form>
+                    <button type="button" onClick={this.onSubmit.bind(this)}>Login</button>
+                </form> */}
+
+                <Info1>
+                    <Session1>
+                        <InfoImg1>
+                            <BackgroundImage src={bg} alt="saron" sizes="180vh" />
+                        </InfoImg1>
+                    </Session1>
+                </Info1>
             </div>
         )
     }
 }
+
+
+const Info1 = styled.div`
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+`
+const Session1 = styled.div`
+  top: 0;
+  left: 0;
+  width: 100vw;
+  bottom: 0;
+  overflow: hidden;
+  position: absolute;
+`
+const InfoImg1 = styled.div`
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  overflow: hidden;
+  position: absolute;
+  background: black;
+`
+const BackgroundImage = styled.img`
+top: 0;
+right: 0;
+width: 100vw;
+height: 100%;
+z-index: 0;
+position: absolute;
+object-fit: cover;
+`
 
 export default App;
