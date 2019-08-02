@@ -1,65 +1,81 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import axios from 'axios';
-import { Link, Switch, Route } from 'react-router-dom';
 
 class App extends Component {
+    constructor(props) {
+        super(props)
+        const token = localStorage.getItem('token')
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      username: "",
-      password: ""
+        let loggedIn = true
+        if (token == null) {
+            loggedIn = false
+        }
+
+        this.state = {
+            username: '',
+            password: '',
+            loggedIn
+        }
+
+        // this.login = this.login.bind(this);
+        // this.onChange = this.onChange.bind(this);
+
     }
 
-    // this.login = this.login.bind(this);
-    // this.onChange = this.onChange.bind(this);
+    submitLogin(e) {
+        e.preventDefault()
+        const { username, password } = this.state
+        const data = { username: username, password: password }
 
-  }
+        const url = "http://192.168.0.158:8080/api/v1/login";
 
-  submitlogin(e) {
+        axios.post(url, data)
+            .then(res => {
+                console.log(res.data)
+                const result = res.data
 
-    const { username, password } = this.state
-    const data = { username: username, password: password }
+                if (result.result === "success") {
+                    localStorage.setItem("token", result.data)
+                    //   console.log(result.data)
+                    this.setState({
+                        loggedIn: true
+                    })
 
-    const url = "http://192.168.0.158:8080/api/v1/login";
+                } else {
+                    console.log('Login Failed')
+                }
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
 
-    axios.post(url, data)
-      .then(res => {
-        console.log(res.data)
-        const result = res.data
+    onChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+        // console.log(this.state);
+    }
 
-        if (result.result === "success") {
-          localStorage.setItem("token", result.data)
-          console.log(result.data)
-
-        } else {
-          console.log('Login Failed')
+    render() {
+        if (this.state.loggedIn) {
+            return <Redirect to="/admin" />
         }
-      })
-      .catch(error => {
-        console.log(error)
-      })
-  }
 
-  onChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
-    // console.log(this.state);
-  }
-
-  render() {
-    return (
-      <div className="Login">
-        <h1>Login</h1>
-        <form>
-          <input type="text" name="username" placeholder="username" onChange={this.onChange.bind(this)} />
-          <br/>
-          <input type="password" name="password" placeholder="password" onChange={this.onChange.bind(this)} />
-          <br/>
-          <button type="button" onClick={this.submitlogin.bind(this)}>Login</button>
-        </form>
-      </div>
-    )
-  }
+        return (
+            <div className="Login">
+                <h1>Login</h1>
+                <form>
+                    <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.onChange.bind(this)} />
+                    <br />
+                    <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.onChange.bind(this)} />
+                    <br />
+                    <button type="button" onClick={this.submitLogin.bind(this)}>Login</button>
+                </form>
+            </div>
+        )
+    }
 }
 
 export default App;
