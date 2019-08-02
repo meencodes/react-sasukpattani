@@ -18,10 +18,10 @@ class Admin extends Component {
         this.onLogout = this.onLogout.bind(this);
     }
 
-    onLogout(event) {
+    onLogout = (event) => {
         event.preventDefault()
         localStorage.removeItem("token");
-        this.props.history.goBack();
+        this.props.history.push('/');
     }
 
     render() {

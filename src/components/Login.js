@@ -64,15 +64,16 @@ class App extends Component {
 
     render() {
         if (this.state.loggedIn) {
-            if (this.state.status === 'admin') {
-                return <Redirect to="/admin" />
-            }
-            else if (this.state.status === 'gerneral') {
-                return <Redirect to="/logout" />
-            }
-            else if (this.state.status === 'suspend') {
-                return <Redirect to="/suspend" />
-            }
+            // if (this.state.status === 'admin') {
+            //     return <Redirect to="/admin" />
+            // }
+            // else if (this.state.status === 'gerneral') {
+            //     return <Redirect to="/logout" />
+            // }
+            // else if (this.state.status === 'suspend') {
+            //     return <Redirect to="/suspend" />
+            // }
+            return <Redirect to="/admin" />
         }
 
         return (
