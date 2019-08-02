@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 class Admin extends Component {
     constructor(props) {
@@ -14,7 +14,16 @@ class Admin extends Component {
         this.state = { 
             loggedIn
         }
+
+        this.onLogout = this.onLogout.bind(this);
     }
+
+    onLogout(event) {
+        event.preventDefault()
+        localStorage.removeItem("token");
+        this.props.history.goBack();
+    }
+
     render() {
         if (this.state.loggedIn === false) {
             return <Redirect to="/" />
@@ -22,7 +31,7 @@ class Admin extends Component {
         return (
             <div>
                 <h1>หน้าหลัก</h1>
-                <Link to="/logout">Logout</Link>
+                <button onClick={this.onLogout}>ออกจากระบบ</button>
             </div>
         )
     }
