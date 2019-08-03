@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
-import bg from '../image/background.jpg';
+import bg from '../image/background01.jpg';
 import styled from 'styled-components';
 
 class App extends Component {
@@ -79,22 +79,29 @@ class App extends Component {
         }
 
         return (
-            <div className="Login">
-                {/* <h1>Login</h1>
-                <form>
-                    <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.onChange.bind(this)} />
-                    <br />
-                    <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.onChange.bind(this)} />
-                    <br />
-                    <button type="button" onClick={this.onSubmit.bind(this)}>Login</button>
-                </form> */}
+            <div>
 
                 <Info1>
                     <Session1>
                         <InfoImg1>
                             <BackgroundImage src={bg} alt="saron" sizes="180vh" />
+
                         </InfoImg1>
                     </Session1>
+                    <Containerlogin100>
+                        <FormLogin100>
+                            <Form100>
+                                <span>Login</span>
+                                <form>
+                                    <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.onChange.bind(this)} />
+                                    <br />
+                                    <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.onChange.bind(this)} />
+                                    <br />
+                                    <button type="button" onClick={this.onSubmit.bind(this)}>Login</button>
+                                </form>
+                            </Form100>
+                        </FormLogin100>
+                    </Containerlogin100>
                 </Info1>
             </div>
         )
@@ -103,9 +110,10 @@ class App extends Component {
 
 
 const Info1 = styled.div`
+  width:100%;
   height: 100vh;
   overflow: hidden;
-  position: relative;
+  position: absolute;
 `
 const Session1 = styled.div`
   top: 0;
@@ -133,6 +141,52 @@ height: 100%;
 z-index: 0;
 position: absolute;
 object-fit: cover;
+`
+const Containerlogin100 = styled.div`
+  width: 100;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+
+`
+const FormLogin100 = styled.div`
+  width: 1170px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  flex-direction: row-reverse;
+
+`
+const Form100 = styled.div`
+  width: 40%;
+  background: white;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 350px 40px 40px 40px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 1px 1px rgba(0,0,0,0.24);
+
+  @media (max-width: 992px) {
+    width: 60%;
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+@media (max-width: 768px) {
+    width: 100%;
+}
+
+@media (max-width: 576px) {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 150px;
+}
 `
 
 export default App;
