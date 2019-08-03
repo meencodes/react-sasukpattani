@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import bg from '../image/background01.jpg';
 import styled from 'styled-components';
+import GlobalStyle from '../theme/globalStyle';
 
 class App extends Component {
     constructor(props) {
@@ -80,7 +81,7 @@ class App extends Component {
 
         return (
             <div>
-
+                <GlobalStyle />
                 <Info1>
                     <Session1>
                         <InfoImg1>
@@ -91,10 +92,10 @@ class App extends Component {
                     <Containerlogin100>
                         <FormLogin100>
                             <Form100>
-                                <h2>Login</h2>
-                                <Input type="text" name="username" placeholder="ชื่อผู้ใช้งาน" value={this.state.username} onChange={this.onChange.bind(this)} />
-                                <Input type="password" name="password" placeholder="รหัสผ่าน" value={this.state.password} onChange={this.onChange.bind(this)} />
-                               
+                                <h1>Login</h1>
+                                <Input type="text" name="username" placeholder="Email or user name" value={this.state.username} onChange={this.onChange.bind(this)} />
+                                <Input type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.onChange.bind(this)} />
+
                                 <button type="button" onClick={this.onSubmit.bind(this)}>Login</button>
                                 <hr />or<hr />
                             </Form100>
@@ -105,7 +106,6 @@ class App extends Component {
         )
     }
 }
-
 
 const Info1 = styled.div`
   width:100%;
@@ -132,13 +132,13 @@ const InfoImg1 = styled.div`
   background: black;
 `
 const BackgroundImage = styled.img`
-top: 0;
-right: 0;
-width: 100vw;
-height: 100%;
-z-index: 0;
-position: absolute;
-object-fit: cover;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: 0;
+  position: absolute;
+  object-fit: cover;
 `
 const Containerlogin100 = styled.div`
   width: 100;
@@ -160,6 +160,7 @@ const FormLogin100 = styled.div`
 
 `
 const Form100 = styled.div`
+  font-family: AmeenDev
   width: 40%;
   background: white;
   border-radius: 20px;
@@ -182,7 +183,7 @@ const Form100 = styled.div`
 @media (max-width: 576px) {
     padding-left: 15px;
     padding-right: 15px;
-    padding-top: 150px;
+    padding-top: 50px;
 }
 `
 
@@ -191,7 +192,6 @@ const Form100 = styled.div`
 const Input = styled.input`
   width: 100%;
   margin-bottom: 20px;
-  font-size: 16px;
   border: solid 1px #dbdbdb;
  
   padding: 18px 33px;
@@ -200,6 +200,8 @@ const Input = styled.input`
   cursor: text;
 
   background: #fafafa;
+  font-family: AmeenDev;
+  font-size: 20px;
 
   &:active,
   &:focus {
