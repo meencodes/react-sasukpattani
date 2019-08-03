@@ -91,14 +91,15 @@ class App extends Component {
                     <Containerlogin100>
                         <FormLogin100>
                             <Form100>
-                                <span>Login</span>
-                                <form>
-                                    <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.onChange.bind(this)} />
+                                <FormControl>
+                                    <h2>Login</h2>
+                                    <Input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.onChange.bind(this)} />
                                     <br />
-                                    <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.onChange.bind(this)} />
+                                    <Input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.onChange.bind(this)} />
                                     <br />
                                     <button type="button" onClick={this.onSubmit.bind(this)}>Login</button>
-                                </form>
+                                    <hr />or<hr />
+                                </FormControl>
                             </Form100>
                         </FormLogin100>
                     </Containerlogin100>
@@ -166,9 +167,9 @@ const Form100 = styled.div`
   background: white;
   border-radius: 20px;
   position: relative;
-  display: flex;
+  display: ;
   flex-wrap: wrap;
-  padding: 350px 40px 40px 40px;
+  padding: 40px 40px 40px 40px;
   box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 1px 1px rgba(0,0,0,0.24);
 
   @media (max-width: 992px) {
@@ -187,6 +188,33 @@ const Form100 = styled.div`
     padding-right: 15px;
     padding-top: 150px;
 }
+`
+
+// ฟอร์มสำหรับกรอกข้อมูล
+
+const FormControl = styled.form`
+  
+
+
+}
+`
+const Input = styled.input`
+  width: 83%;
+  margin: 10px;
+  font-size: 16px;
+  border: solid 1px #dbdbdb;
+ 
+  padding: 18px 33px;
+  border-radius: 8px;
+  color: #999;
+  cursor: text;
+
+  background: #fafafa;
+
+  &:active,
+  &:focus {
+    z-index: 2;
+  }
 `
 
 export default App;
