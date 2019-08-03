@@ -91,15 +91,12 @@ class App extends Component {
                     <Containerlogin100>
                         <FormLogin100>
                             <Form100>
-                                <FormControl>
-                                    <h2>Login</h2>
-                                    <Input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.onChange.bind(this)} />
-                                    <br />
-                                    <Input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.onChange.bind(this)} />
-                                    <br />
-                                    <button type="button" onClick={this.onSubmit.bind(this)}>Login</button>
-                                    <hr />or<hr />
-                                </FormControl>
+                                <h2>Login</h2>
+                                <Input type="text" name="username" placeholder="ชื่อผู้ใช้งาน" value={this.state.username} onChange={this.onChange.bind(this)} />
+                                <Input type="password" name="password" placeholder="รหัสผ่าน" value={this.state.password} onChange={this.onChange.bind(this)} />
+                               
+                                <button type="button" onClick={this.onSubmit.bind(this)}>Login</button>
+                                <hr />or<hr />
                             </Form100>
                         </FormLogin100>
                     </Containerlogin100>
@@ -154,7 +151,7 @@ const Containerlogin100 = styled.div`
 
 `
 const FormLogin100 = styled.div`
-  width: 1170px;
+  width: 1100px;
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
@@ -167,7 +164,7 @@ const Form100 = styled.div`
   background: white;
   border-radius: 20px;
   position: relative;
-  display: ;
+  display: flex;
   flex-wrap: wrap;
   padding: 40px 40px 40px 40px;
   box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 1px 1px rgba(0,0,0,0.24);
@@ -176,7 +173,6 @@ const Form100 = styled.div`
     width: 60%;
     padding-left: 30px;
     padding-right: 30px;
-
 }
 
 @media (max-width: 768px) {
@@ -192,15 +188,9 @@ const Form100 = styled.div`
 
 // ฟอร์มสำหรับกรอกข้อมูล
 
-const FormControl = styled.form`
-  
-
-
-}
-`
 const Input = styled.input`
-  width: 83%;
-  margin: 10px;
+  width: 100%;
+  margin-bottom: 20px;
   font-size: 16px;
   border: solid 1px #dbdbdb;
  
