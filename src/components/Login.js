@@ -22,9 +22,12 @@ class App extends Component {
             loggedIn
         }
 
-        // this.login = this.login.bind(this);
-        // this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+        this.onChange = this.onChange.bind(this);
 
+    }
+    componentDidMount() {
+        
     }
 
     onSubmit = (e) => {
@@ -93,8 +96,8 @@ class App extends Component {
                         <FormLogin100>
                             <Form100>
                                 <h1>LOGIN</h1>
-                                <Input type="text" name="username" placeholder="ชื่อผู้ใช้ หรืออีเมล์" value={this.state.username} onChange={this.onChange.bind(this)} />
-                                <Input type="password" name="password" placeholder="รหัสผ่าน" value={this.state.password} onChange={this.onChange.bind(this)} />
+                                <Input type="text" name="username" placeholder="ชื่อผู้ใช้ หรืออีเมล์" value={this.state.username} onChange={this.onChange} />
+                                <Input type="password" name="password" placeholder="รหัสผ่าน" value={this.state.password} onChange={this.onChange} />
 
                                 <ContainerButton>
                                     <Button type="button" onClick={this.onSubmit.bind(this)}>เข้าสู่ระบบ</Button>
@@ -182,9 +185,9 @@ const Form100 = styled.div`
 }
 
 @media (max-width: 576px) {
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    /* padding-top: 50px; */
 }
 `
 
