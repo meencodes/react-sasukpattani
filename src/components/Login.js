@@ -92,12 +92,13 @@ class App extends Component {
                     <Containerlogin100>
                         <FormLogin100>
                             <Form100>
-                                <h1>Login</h1>
-                                <Input type="text" name="username" placeholder="Email or user name" value={this.state.username} onChange={this.onChange.bind(this)} />
-                                <Input type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.onChange.bind(this)} />
+                                <h1>LOGIN</h1>
+                                <Input type="text" name="username" placeholder="ชื่อผู้ใช้ หรืออีเมล์" value={this.state.username} onChange={this.onChange.bind(this)} />
+                                <Input type="password" name="password" placeholder="รหัสผ่าน" value={this.state.password} onChange={this.onChange.bind(this)} />
 
-                                <button type="button" onClick={this.onSubmit.bind(this)}>Login</button>
-                                <hr />or<hr />
+                                <ContainerButton>
+                                    <Button type="button" onClick={this.onSubmit.bind(this)}>เข้าสู่ระบบ</Button>
+                                </ContainerButton>
                             </Form100>
                         </FormLogin100>
                     </Containerlogin100>
@@ -112,6 +113,7 @@ const Info1 = styled.div`
   height: 100vh;
   overflow: hidden;
   position: absolute;
+  font-family: AmeenDev;
 `
 const Session1 = styled.div`
   top: 0;
@@ -151,7 +153,7 @@ const Containerlogin100 = styled.div`
 
 `
 const FormLogin100 = styled.div`
-  width: 1100px;
+  width: 1000px;
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
@@ -160,7 +162,6 @@ const FormLogin100 = styled.div`
 
 `
 const Form100 = styled.div`
-  font-family: AmeenDev
   width: 40%;
   background: white;
   border-radius: 20px;
@@ -194,18 +195,51 @@ const Input = styled.input`
   margin-bottom: 20px;
   border: solid 1px #dbdbdb;
  
-  padding: 18px 33px;
-  border-radius: 8px;
+  padding: 18px 40px;
+  border-radius: 5px;
   color: #999;
   cursor: text;
-
-  background: #fafafa;
+  
+  /* background: #fafafa; */
   font-family: AmeenDev;
-  font-size: 20px;
+  font-size: 18px;
+  background: transparent;
+  outline: none;
 
   &:active,
   &:focus {
-    z-index: 2;
+    border: 1px solid #F4427E;
+    /* transition: all 0.4s;
+    transform: scaleX(1.1) scaleY(1.1); */
+  }
+  ::placeholder {
+    color: #999;
+  }
+`
+
+const ContainerButton = styled.div`
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-top: 40px;
+`
+const Button = styled.button`
+  width: 50%;
+  padding: 12px 30px;
+  background: #ff538d;
+  font-family: AmeenDev;
+  font-size: 18px;
+  border-radius: 5px;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  &:active,
+  &:focus,
+  &:hover {
+      background: #F4427E;
   }
 `
 
