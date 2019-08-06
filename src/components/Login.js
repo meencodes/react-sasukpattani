@@ -95,7 +95,7 @@ class App extends Component {
                     <Containerlogin100>
                         <FormLogin100>
                             <Form100>
-                                <h1>LOGIN</h1>
+                                <h1>LOGIN | MAJASMEE</h1>
                                 <Input type="text" name="username" placeholder="ชื่อผู้ใช้ หรืออีเมล์" value={this.state.username} onChange={this.onChange} />
                                 <Input type="password" name="password" placeholder="รหัสผ่าน" value={this.state.password} onChange={this.onChange} />
 
