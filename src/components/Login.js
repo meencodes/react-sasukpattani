@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
-import bg from '../image/background01.jpg';
+import bg from '../image/background02.jpg';
 import styled from 'styled-components';
 import GlobalStyle from '../theme/globalStyle';
 
@@ -27,7 +27,7 @@ class App extends Component {
 
     }
     componentDidMount() {
-        
+
     }
 
     onSubmit = (e) => {
@@ -87,15 +87,15 @@ class App extends Component {
                 <GlobalStyle />
                 <Info1>
                     <Session1>
-                        <InfoImg1>
+                        {/* <InfoImg1>
                             <BackgroundImage src={bg} alt="saron" sizes="180vh" />
 
-                        </InfoImg1>
+                        </InfoImg1> */}
                     </Session1>
                     <Containerlogin100>
                         <FormLogin100>
                             <Form100>
-                                <h1>LOGIN | MAJASMEE</h1>
+                                <h1>LOGIN |</h1>
                                 <Input type="text" name="username" placeholder="ชื่อผู้ใช้ หรืออีเมล์" value={this.state.username} onChange={this.onChange} />
                                 <Input type="password" name="password" placeholder="รหัสผ่าน" value={this.state.password} onChange={this.onChange} />
 
@@ -117,6 +117,7 @@ const Info1 = styled.div`
   overflow: hidden;
   position: absolute;
   font-family: AmeenDev;
+  background: #f2f2f2;
 `
 const Session1 = styled.div`
   top: 0;
@@ -167,12 +168,12 @@ const FormLogin100 = styled.div`
 const Form100 = styled.div`
   width: 40%;
   background: white;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   position: relative;
   display: flex;
   flex-wrap: wrap;
   padding: 40px 40px 40px 40px;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 1px 1px rgba(0,0,0,0.24);
+  /* box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 1px 1px rgba(0,0,0,0.24); */
 
   @media (max-width: 992px) {
     width: 60%;
@@ -211,7 +212,7 @@ const Input = styled.input`
 
   &:active,
   &:focus {
-    border: 1px solid #F4427E;
+    border: 1px solid #ff538d;
     /* transition: all 0.4s;
     transform: scaleX(1.1) scaleY(1.1); */
   }
@@ -236,13 +237,16 @@ const Button = styled.button`
   border-radius: 5px;
   color: white;
   outline: none;
-  border: none;
+  border: 1px solid #ff538d;
   cursor: pointer;
+
 
   &:active,
   &:focus,
   &:hover {
-      background: #F4427E;
+      color: #ff538d;
+      border: 1px solid #ff538d;
+      background: transparent;
   }
 `
 
