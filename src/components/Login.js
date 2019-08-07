@@ -87,15 +87,15 @@ class App extends Component {
                 <GlobalStyle />
                 <Info1>
                     <Session1>
-                        {/* <InfoImg1>
+                        <InfoImg1>
                             <BackgroundImage src={bg} alt="saron" sizes="180vh" />
 
-                        </InfoImg1> */}
+                        </InfoImg1>
                     </Session1>
                     <Containerlogin100>
                         <FormLogin100>
                             <Form100>
-                                <h1>LOGIN |</h1>
+                                <h1>LOGIN</h1>
                                 <Input type="text" name="username" placeholder="ชื่อผู้ใช้ หรืออีเมล์" value={this.state.username} onChange={this.onChange} />
                                 <Input type="password" name="password" placeholder="รหัสผ่าน" value={this.state.password} onChange={this.onChange} />
 
@@ -168,7 +168,7 @@ const FormLogin100 = styled.div`
 const Form100 = styled.div`
   width: 40%;
   background: white;
-  /* border-radius: 20px; */
+  border-radius: 20px;
   position: relative;
   display: flex;
   flex-wrap: wrap;
