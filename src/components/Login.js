@@ -27,7 +27,7 @@ class App extends Component {
 
     }
     componentDidMount() {
-
+        
     }
 
     onSubmit = (e) => {
@@ -39,7 +39,7 @@ class App extends Component {
 
         axios.post(url, data)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 const result = res.data
 
                 if (result.result === "success") {
@@ -79,7 +79,7 @@ class App extends Component {
             // else if (this.state.status === 'suspend') {
             //     return <Redirect to="/suspend" />
             // }
-            return <Redirect to="/admin" />
+            return <Redirect to="/home" />
         }
 
         return (

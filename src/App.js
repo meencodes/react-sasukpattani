@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Login from './components/Login';
-import Admin from './components/Admin';
-// import Logout from './components/Logout';
+import Home from './components/Home';
+import NotFound from './components/404';
 
 class App extends Component {
   render() {
@@ -10,8 +10,9 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Login} />
-          <Route path="/admin" component={Admin} />
-          {/* <Route path="/logout" component={Logout} /> */}
+          <Route path="/home" component={Home} />
+
+          <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
     )
