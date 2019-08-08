@@ -254,10 +254,9 @@ const Button = styled.button`
 
 const ContainerHeader = styled.div`
   width: 100%;
-  /* background: red; */
   top: 0;
   margin-bottom: 2.5rem;
-  font-size: 2rem;
+  font-size: 2.2rem;
 `
 
 export default App;
