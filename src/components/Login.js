@@ -27,7 +27,7 @@ class App extends Component {
 
     }
     componentDidMount() {
-        
+
     }
 
     onSubmit = (e) => {
@@ -95,7 +95,9 @@ class App extends Component {
                     <Containerlogin100>
                         <FormLogin100>
                             <Form100>
-                                <h1>LOGIN</h1>
+                                <ContainerHeader>
+                                    <b>LOGIN</b>
+                                </ContainerHeader>
                                 <Input type="text" name="username" placeholder="ชื่อผู้ใช้ หรืออีเมล์" value={this.state.username} onChange={this.onChange} />
                                 <Input type="password" name="password" placeholder="รหัสผ่าน" value={this.state.password} onChange={this.onChange} />
 
@@ -196,7 +198,7 @@ const Form100 = styled.div`
 
 const Input = styled.input`
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 1.75rem;
   border: solid 1px #dbdbdb;
  
   padding: 18px 40px;
@@ -248,6 +250,14 @@ const Button = styled.button`
       border: 1px solid #ff538d;
       background: transparent;
   }
+`
+
+const ContainerHeader = styled.div`
+  width: 100%;
+  /* background: red; */
+  top: 0;
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
 `
 
 export default App;
