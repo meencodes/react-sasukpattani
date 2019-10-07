@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect, withRouter } from 'react-router-dom';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 class Admin extends Component {
     constructor(props) {
